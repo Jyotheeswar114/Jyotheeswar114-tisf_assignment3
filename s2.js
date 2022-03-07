@@ -5381,7 +5381,7 @@ var $elm$random$Random$int = F2(
 	});
 var $author$project$S2$initModel = function (_v0) {
 	return _Utils_Tuple2(
-		{a: 0, array: _List_Nil, b: 0, c: 1, d: 1, e: 0, f: 0, g: 1, h: 1, history: _List_Nil, i: 1, j: 2, message: '', n: 0, s: 0, stage: 0},
+		{a: 0, array: _List_Nil, b: 0, c: 1, d: 1, history: _List_Nil, i: 1, j: 2, message: '', n: 0, s: 0, stage: 0},
 		A2(
 			$elm$random$Random$generate,
 			$author$project$S2$LEN,
@@ -5460,7 +5460,7 @@ var $elm$core$Array$fromList = function (list) {
 	}
 };
 var $author$project$S2$give_hist = function (model) {
-	return {a: model.a, array: model.array, b: model.b, c: model.c, d: model.d, e: model.e, f: model.f, g: model.g, h: model.h, i: model.i, j: model.j};
+	return {a: model.a, array: model.array, b: model.b, c: model.c, d: model.d, i: model.i, j: model.j};
 };
 var $elm$core$Basics$min = F2(
 	function (x, y) {
@@ -5919,7 +5919,19 @@ var $author$project$S2$update = F2(
 									[numb])),
 							history: _List_fromArray(
 								[
-									$author$project$S2$give_hist(model)
+									{
+									a: model.a,
+									array: A2(
+										$elm$core$List$append,
+										model.array,
+										_List_fromArray(
+											[numb])),
+									b: model.b,
+									c: model.c,
+									d: model.d,
+									i: model.i,
+									j: model.j
+								}
 								])
 						}),
 					$elm$core$Platform$Cmd$none);
@@ -6350,7 +6362,8 @@ var $author$project$S2$view = function (model) {
 								$elm$html$Html$a,
 								_List_fromArray(
 									[
-										$elm$html$Html$Attributes$class('link activated')
+										$elm$html$Html$Attributes$class('link'),
+										$elm$html$Html$Attributes$href('./index.html')
 									]),
 								_List_fromArray(
 									[
@@ -6360,8 +6373,7 @@ var $author$project$S2$view = function (model) {
 								$elm$html$Html$a,
 								_List_fromArray(
 									[
-										$elm$html$Html$Attributes$class('link'),
-										$elm$html$Html$Attributes$href('./s2.html')
+										$elm$html$Html$Attributes$class('link activated')
 									]),
 								_List_fromArray(
 									[
